@@ -6,11 +6,11 @@ export const marketsSlice = createSlice({
         value: []
     },
     reducers: {
-        update: (state, action) => {
+        updateMarketsList: (state, action) => {
             state.value = action.payload;
         }
     }
 })
 
-export const { update } = marketsSlice.actions;
+export const { updateMarketsList } = marketsSlice.actions;
 export default marketsSlice.reducer;

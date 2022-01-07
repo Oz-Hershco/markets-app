@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Container, Spinner } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import MarketsList from '../../Components/MarketsList/MarketsList';
-import { update } from '../../Redux/marketsSlice';
+import { updateMarketsList } from '../../Redux/marketsSlice';
 
 export default function Markets() {
 
@@ -14,7 +14,7 @@ export default function Markets() {
         const marketListSession = JSON.parse(sessionStorage.getItem("marketList"));
         if (marketListSession) {
             console.log("Market list retrieved from session.")
-            dispatch(update(marketListSession));
+            dispatch(updateMarketsList(marketListSession));
         } else {
             console.log("Market list retrieved from API.")
             var myHeaders = new Headers();
@@ -28,7 +28,7 @@ export default function Markets() {
                 .then(response => response.text())
                 .then((result) => {
                     const data = JSON.parse(result).marketSummaryResponse.result;
-                    dispatch(update(data));
+                    dispatch(updateMarketsList(data));
                     sessionStorage.setItem("marketList", JSON.stringify(data))
                 })
                 .catch(error => console.log('error', error));
