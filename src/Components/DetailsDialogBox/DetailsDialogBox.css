@@ -1,0 +1,30 @@
+.DetailsDialogBox-Details-Container{
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* width */
+.DetailsDialogBox-Details-Container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  .DetailsDialogBox-Details-Container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  .DetailsDialogBox-Details-Container::-webkit-scrollbar-thumb {
+    background: rgb(62, 116, 216);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .DetailsDialogBox-Details-Container::-webkit-scrollbar-thumb:hover {
+    background: rgb(62, 116, 216);
+  }
+
+
+.DetailsDialogBox-Details-Titles{
+    color: rgb(62, 116, 216);
+}
